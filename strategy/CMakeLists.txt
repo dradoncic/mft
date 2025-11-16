@@ -38,7 +38,7 @@ find_package(jwt-cpp CONFIG REQUIRED)
 
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS src/*.cpp)
 
-add_executable(feedx-core
+add_executable(strategy
     ${SRC_FILES}
 )
 
@@ -55,12 +55,12 @@ FetchContent_Declare(
    
   FetchContent_MakeAvailable(simdjson)
 
-target_include_directories(feedx-core PRIVATE
+target_include_directories(strategy PRIVATE
     include
     ${OPENSSL_INCLUDE_DIR}
 )
 
-target_link_libraries(feedx-core PRIVATE
+target_link_libraries(strategy PRIVATE
     Boost::filesystem
     OpenSSL::SSL
     OpenSSL::Crypto
