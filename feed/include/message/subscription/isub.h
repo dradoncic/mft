@@ -4,7 +4,7 @@
 
 #include "../../auth/iauth.h"
 
-struct SubcriptionRequest
+struct SubscriptionRequest
 {
     std::string channel;
     std::vector<std::string> products;
@@ -16,18 +16,18 @@ class ISubscribeBuilder
    public:
     virtual ~ISubscribeBuilder() = default;
 
-    virtual std::string build(const SubcriptionRequest& req) = 0;
+    virtual std::string build(const SubscriptionRequest& req) = 0;
 };
 
 class SubscriptionManager
 {
    public:
-    void add_subscription(const SubcriptionRequest& req)
+    void add_subscription(const SubscriptionRequest& req)
     {
         subscriptions_.push_back(req);
     }
 
-    const std::vector<SubcriptionRequest>& get_subscriptions() const
+    const std::vector<SubscriptionRequest>& get_subscriptions() const
     {
         return subscriptions_;
     }
@@ -48,5 +48,5 @@ class SubscriptionManager
     }
 
    private:
-    std::vector<SubcriptionRequest> subscriptions_;
+    std::vector<SubscriptionRequest> subscriptions_;
 };

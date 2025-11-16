@@ -17,8 +17,7 @@ class IWSConnector
 
     virtual void connect(const std::string& url,
                          const std::string& port = "443",
-                         const std::vector<std::string>& channels = {},
-                         const std::vector<std::string>& products = {}) = 0;
+                         const std::vector<SubscriptionRequest>& reqs) = 0;
 
     virtual void close() = 0;
 
@@ -50,8 +49,37 @@ class IWSConnector
     std::function<void(const std::string&)> on_error;
     std::function<void(ConnectionState, ConnectionState)> on_state_change;
 
-    void subscribe(const std::string& channel,
-                   const std::vector<std::string>& products);
+    void subscribe(const SubscriptionRequest& req)
+    {
+        if (!subscribe_builder_)
+            return;
+
+        auto msg = subscribe_builder_->build(req);
+        send(msg);
+    }
+
+    // void add_subscriptions(std::vector<SubscriptionRequest> reqs)
+    // {
+    //     for (const auto& req : reqs)
+    //     {
+    //         subscription_manager_->add_subscription(req);
+    //     }
+    // }
+
+    // const std::vector<SubscriptionRequest>& get_subscriptions() const
+    // {
+    //     return subscription_manager_->get_subscriptions();
+    // }
+
+    // void clear_subscriptions()
+    // {
+    //     subscription_manager_->clear_subscriptions();
+    // }
+
+    // size_t subscription_count() const
+    // {
+    //     return subscription_manager_->subscription_count();
+    // }
 
     void set_heartbeat_policy(std::shared_ptr<IHeartbeatPolicy> policy)
     {
@@ -81,20 +109,10 @@ class IWSConnector
     {
         return port_;
     }
-    const std::vector<std::string>& channels()
-    {
-        return channels_;
-    }
-    const std::vector<std::string>& products()
-    {
-        return products_;
-    }
 
    protected:
     std::string host_;
     std::string port_;
-    std::vector<std::string> channels_;
-    std::vector<std::string> products_;
 
     std::shared_ptr<IHeartbeatPolicy> heartbeat_policy_;
     std::shared_ptr<IAuthProvider> auth_provider_;
