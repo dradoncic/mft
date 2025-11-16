@@ -100,6 +100,7 @@ class IWSConnector
     std::shared_ptr<IAuthProvider> auth_provider_;
     std::shared_ptr<ISubscribeBuilder> subscribe_builder_;
     std::shared_ptr<IMessageAdapter> message_adapter_;
+    std::shared_ptr<SubscriptionManager> subscription_manager_;
 
     void handle_message(const std::string_view msg);
     void handle_disconnect();

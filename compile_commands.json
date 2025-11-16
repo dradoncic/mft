@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/Users/deenradoncic/Desktop/code/lob_feed/build/feed",
+  "command": "/usr/bin/clang++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DSIMDJSON_THREADS_ENABLED=1 -I/Users/deenradoncic/Desktop/code/lob_feed/feed/include -I/Users/deenradoncic/Desktop/code/lob_feed/build/_deps/simdjson-src/include -isystem /opt/homebrew/Cellar/openssl@3/3.5.2/include -isystem /opt/homebrew/include -g -std=c++20 -arch arm64 -o CMakeFiles/feed.dir/src/main.cpp.o -c /Users/deenradoncic/Desktop/code/lob_feed/feed/src/main.cpp",
+  "file": "/Users/deenradoncic/Desktop/code/lob_feed/feed/src/main.cpp",
+  "output": "feed/CMakeFiles/feed.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/deenradoncic/Desktop/code/lob_feed/build/_deps/simdjson-build",
+  "command": "/usr/bin/clang++ -DSIMDJSON_AVX512_ALLOWED=1 -DSIMDJSON_THREADS_ENABLED=1 -DSIMDJSON_UTF8VALIDATION=1 -I/Users/deenradoncic/Desktop/code/lob_feed/build/_deps/simdjson-src/include -I/Users/deenradoncic/Desktop/code/lob_feed/build/_deps/simdjson-src/src -g -std=c++17 -arch arm64 -Og -o CMakeFiles/simdjson.dir/src/simdjson.cpp.o -c /Users/deenradoncic/Desktop/code/lob_feed/build/_deps/simdjson-src/src/simdjson.cpp",
+  "file": "/Users/deenradoncic/Desktop/code/lob_feed/build/_deps/simdjson-src/src/simdjson.cpp",
+  "output": "_deps/simdjson-build/CMakeFiles/simdjson.dir/src/simdjson.cpp.o"
+},
+{
+  "directory": "/Users/deenradoncic/Desktop/code/lob_feed/build/strategy",
+  "command": "/usr/bin/clang++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DSIMDJSON_THREADS_ENABLED=1 -I/Users/deenradoncic/Desktop/code/lob_feed/strategy/include -I/Users/deenradoncic/Desktop/code/lob_feed/build/_deps/simdjson-src/include -isystem /opt/homebrew/Cellar/openssl@3/3.5.2/include -isystem /opt/homebrew/include -g -std=c++20 -arch arm64 -o CMakeFiles/strategy.dir/src/main.cpp.o -c /Users/deenradoncic/Desktop/code/lob_feed/strategy/src/main.cpp",
+  "file": "/Users/deenradoncic/Desktop/code/lob_feed/strategy/src/main.cpp",
+  "output": "strategy/CMakeFiles/strategy.dir/src/main.cpp.o"
+}
+]
