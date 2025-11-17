@@ -58,29 +58,6 @@ class IWSConnector
         send(msg);
     }
 
-    // void add_subscriptions(std::vector<SubscriptionRequest> reqs)
-    // {
-    //     for (const auto& req : reqs)
-    //     {
-    //         subscription_manager_->add_subscription(req);
-    //     }
-    // }
-
-    // const std::vector<SubscriptionRequest>& get_subscriptions() const
-    // {
-    //     return subscription_manager_->get_subscriptions();
-    // }
-
-    // void clear_subscriptions()
-    // {
-    //     subscription_manager_->clear_subscriptions();
-    // }
-
-    // size_t subscription_count() const
-    // {
-    //     return subscription_manager_->subscription_count();
-    // }
-
     void set_heartbeat_policy(std::shared_ptr<IHeartbeatPolicy> policy)
     {
         heartbeat_policy_ = std::move(policy);
